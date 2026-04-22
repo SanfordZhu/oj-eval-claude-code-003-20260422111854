@@ -159,7 +159,7 @@ public:
         }
     }
 
-    void flushScoreboard() {
+    void flushScoreboard(bool print_scoreboard = true) {
         if (!competition_started) return;
 
         // Update all teams' solve times
@@ -181,8 +181,10 @@ public:
 
         cout << "[Info]Flush scoreboard.\n";
 
-        // Always print the scoreboard after flushing
-        printScoreboard();
+        // Print the scoreboard if requested
+        if (print_scoreboard) {
+            printScoreboard();
+        }
     }
 
     void freezeScoreboard() {
@@ -210,8 +212,8 @@ public:
 
         cout << "[Info]Scroll scoreboard.\n";
 
-        // First flush the scoreboard
-        flushScoreboard();
+        // First flush the scoreboard (without printing scoreboard)
+        flushScoreboard(false);
 
         // Print scoreboard before scrolling
         printScoreboard();

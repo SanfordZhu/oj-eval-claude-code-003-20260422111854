@@ -180,9 +180,6 @@ public:
         }
 
         cout << "[Info]Flush scoreboard.\n";
-
-        // Print the scoreboard after flushing
-        printScoreboard();
     }
 
     void freezeScoreboard() {
@@ -210,8 +207,11 @@ public:
 
         cout << "[Info]Scroll scoreboard.\n";
 
-        // First flush the scoreboard (this already prints the scoreboard)
+        // First flush the scoreboard
         flushScoreboard();
+
+        // Print scoreboard before scrolling
+        printScoreboard();
 
         // Process scroll
         scroll_changes.clear();

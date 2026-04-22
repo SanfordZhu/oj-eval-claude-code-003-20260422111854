@@ -180,6 +180,9 @@ public:
         }
 
         cout << "[Info]Flush scoreboard.\n";
+
+        // Always print the scoreboard after flushing
+        printScoreboard();
     }
 
     void freezeScoreboard() {

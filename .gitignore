@@ -1,0 +1,7 @@
+CMakeFiles/
+CMakeCache.txt
+code
+*.o
+*.exe
+.vscode/
+.idea/
